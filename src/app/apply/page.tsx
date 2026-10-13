@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
@@ -87,6 +86,7 @@ export default function ApplyPage() {
       leaderPhone: String(formData.get("leaderPhone") ?? ""),
       city: String(formData.get("city") ?? ""),
       institution: String(formData.get("institution") ?? ""),
+      ambassadorId: String(formData.get("ambassadorId") ?? ""),
       teamSize,
       trackName,
       projectIdea: String(formData.get("projectIdea") ?? ""),
@@ -241,6 +241,17 @@ export default function ApplyPage() {
               <div className="form-field full-width">
                 <label htmlFor="institution">University / institution *</label>
                 <input id="institution" name="institution" required minLength={2} maxLength={180} />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="ambassadorId">Ambassador ID (If you don't have one, enter PAK79) *</label>
+                <input
+                  id="ambassadorId"
+                  name="ambassadorId"
+                  required
+                  placeholder="Enter Ambassador ID"
+                  maxLength={64}
+                />
               </div>
             </div>
 
