@@ -44,6 +44,7 @@ model Registration {
   leaderPhone       String
   city              String
   institution       String
+  ambassadorId      String            @db.VarChar(64)
   participationType String
   teamSize          Int
   trackName         String
@@ -146,7 +147,7 @@ model SpeakerApplication {
   expertise         String
   yearsExperience   Int
   sessionTitle      String
-  sessionDescription String     @db.Text
+  sessionDescription String       @db.Text
   profilePhotoKey   String?
   status            ReviewStatus @default(PENDING_REVIEW)
   isPublished       Boolean      @default(false)
@@ -195,6 +196,7 @@ model AdminAuditLog {
   @@index([entity, entityId])
   @@index([createdAt])
 }
+
 model RollNumberCounter {
   id         String   @id
   lastNumber Int      @default(0)
